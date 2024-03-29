@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  FormEvent,
-  SyntheticEvent,
-  useEffect,
-  useReducer,
-  useRef,
-  useState,
-} from "react";
+import { FormEvent, memo, useEffect, useReducer, useState } from "react";
 import { productReducer } from "./productReducer";
 import { Product, ProductCategory } from "./types";
 
@@ -145,7 +138,7 @@ const ProductForm = ({
   );
 };
 
-const DisplayProducts = ({ products }: { products: Product[] }) => {
+const DisplayProducts = memo(({ products }: { products: Product[] }) => {
   if (products.length === 0) {
     return (
       <>
@@ -175,6 +168,6 @@ const DisplayProducts = ({ products }: { products: Product[] }) => {
       ))}
     </>
   );
-};
+});
 
 const initialProductInventory: Product[] = [];
