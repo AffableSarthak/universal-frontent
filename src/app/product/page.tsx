@@ -138,7 +138,7 @@ const ProductForm = ({
   );
 };
 
-const DisplayProducts = memo(({ products }: { products: Product[] }) => {
+const DisplayProducts = ({ products }: { products: Product[] }) => {
   if (products.length === 0) {
     return (
       <>
@@ -168,6 +168,6 @@ const DisplayProducts = memo(({ products }: { products: Product[] }) => {
       ))}
     </>
   );
-});
+};
 
 const initialProductInventory: Product[] = [];
